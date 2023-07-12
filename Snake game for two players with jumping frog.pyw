@@ -19,7 +19,7 @@ def gmeika3():
     dis_width = 1200
     dis_height = 1000
     dis = pygame.display.set_mode((dis_width, dis_height))
-    pygame.display.set_caption('Змейка ')
+    pygame.display.set_caption('Snake ')
     dis.fill(blue)
     pygame.display.update()
     snake_block = 10
