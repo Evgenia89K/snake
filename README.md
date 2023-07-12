@@ -1,5 +1,5 @@
 # snake
-Snake game for two players with jumping frog.
+Snake game for two players with jumping frog.\n
 This game is made on python3.6.7 and pygame.
 Игра змейка для двоих игроков с прыгающей лягушкой.
 Игра "змейка" сделана на python3.6.7 и pygame.
