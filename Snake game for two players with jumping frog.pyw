@@ -26,87 +26,8 @@ def gmeika3():
     snake_speed = 10
     snake=[[600,500],[610,500]]
     snake2=[[500,500],[510,500]]
-    def snake_foo(snake,name,Left=pygame.K_LEFT,Right=pygame.K_RIGHT,Up=pygame.K_UP,Down=pygame.K_DOWN):
-        
-        our_snake(snake_block, snake)
-        pygame.display.update()
-        x1_change=0
-        y1_change=0
-        sch=0
-        if event.type == pygame.QUIT:
-            game_over = True
-            pygame.quit()
-            quit()
-        if event.type == pygame.KEYDOWN:
-                
+    
                     
-            if event.key == Left:
-                                
-                x1_change = -snake_block
-                y1_change = 0
-            elif event.key == Right:
-                x1_change = snake_block
-                y1_change = 0
-            elif event.key == Up:
-                y1_change = -snake_block
-                x1_change = 0
-            elif event.key == Down:
-                y1_change = snake_block
-                x1_change = 0
-        a=len(snake)-1
-        y=snake[a][1]
-        x=snake[a][0]
-        
-        y+=y1_change
-        x+=x1_change
-        
-        dis.fill(blue)
-        pygame.draw.rect(dis, green, [foodx, foody, snake_block, snake_block])
-        pygame.display.update()
-        
-        snake_Head = []
-        snake_Head.append(x)
-        snake_Head.append(y)
-        snake.append(snake_Head)
-        if snake_Head[0]>dis_width:
-            snake_Head[0]=0
-        if snake_Head[0]<0:
-            snake_Head[0]=dis_width
-        if snake_Head[1]>dis_height:
-            snake_Head[1]=0
-        if snake_Head[1]<0:
-            snake_Head[1]=dis_height
-        if len(snake) > sch+2:
-            del snake[0]
-        for i in snake[:-1]:
-            if i == snake_Head and sch>0:
-                game_over=True
-                sch=0
-                message("Вы проиграли!", collor1=white,collor2=red,a=vbf,b=400,c=400)
-                message2("Нажмите Q для выхода или C для повторной игры!", collor1=white,a=vbf,b=200,c=500)
-                while game_over:
-                    for event in pygame.event.get():
-                        if event.type == pygame.KEYDOWN:
-                            if event.key == pygame.K_q:
-                                sch=0
-                                pygame.quit()
-                                quit()
-                            if event.key == pygame.K_c:
-                                sch=0
-                                snake=[[600,500],[610,500]]
-                                game_over=False
-                                   
-                       
-                
-        our_snake(snake_block, snake)
-        pygame.display.update()
-        if x == foodx and y == foody:
-               
-            foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
-            foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
-            sch += 1
-        to_input=name+str(sch)
-        input1(msg=to_input,collor=yellow,a=score_font,b=0,c=0)                
     font_style = pygame.font.SysFont("bahnschrift", 25)
     score_font = pygame.font.SysFont("comicsansms", 35)
     vbf = pygame.font.SysFont("comicsansms", 30)
@@ -117,14 +38,11 @@ def gmeika3():
         dis.blit(mesg, [b,c])
         pygame.display.update()
     def message2(msg, collor1=(0,0,0),a=vbf,b=dis_width / 6,c=dis_height / 3):
-        
-        
         mesg = a.render(msg, True, collor1)
         dis.blit(mesg, [b,c])
         pygame.display.update()
     def foodA(x,y,collor=green):
         pygame.draw.rect(dis, collor , [x, y, snake_block, snake_block])
-    
     def input1(msg, collor=(0,0,0),a=score_font,b=dis_width / 6,c=dis_height / 3):
         mesg = a.render(msg, True, collor)
         dis.blit(mesg, [b,c])
