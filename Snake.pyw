@@ -1,6 +1,8 @@
 import subprocess
 module = "pygame"
 subprocess.run(["pip", "install", module, "--upgrade"])
+module = "datetime"
+subprocess.run(["pip", "install", module, "--upgrade"])
 import pygame
 import time
 import random
