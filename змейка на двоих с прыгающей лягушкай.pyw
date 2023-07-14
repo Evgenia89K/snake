@@ -48,7 +48,7 @@ def gmeika3():
     def input1(msg, collor=(0,0,0),a=score_font,b=dis_width / 6,c=dis_height / 3):
         mesg = a.render(msg, True, collor)
         dis.blit(mesg, [b,c])
-        pygame.display.update()
+        
     def our_snake(snake_block, snake_list):
         fgf=0
         for x in snake_list:
@@ -59,7 +59,7 @@ def gmeika3():
                 collor=snake_collor11
             fgf+=1 
             pygame.draw.rect(dis, collor , [x[0], x[1], snake_block, snake_block])
-            pygame.display.update()
+            
     def our_snake1(snake_block, snake_list):
         fgf=0
         for x in snake_list:
@@ -70,7 +70,7 @@ def gmeika3():
                 collor=snake_collor12
             fgf+=1 
             pygame.draw.rect(dis, collor , [x[0], x[1], snake_block, snake_block])
-            pygame.display.update()
+            
             
     our_snake(snake_block, snake)
     
@@ -138,7 +138,7 @@ def gmeika3():
         x1+=x1_change1
         dis.fill(blue)
         pygame.draw.rect(dis, green, [foodx, foody, snake_block, snake_block])
-        pygame.display.update()
+        
         
         snake_Head = []
         snake_Head.append(x)
@@ -262,7 +262,7 @@ def gmeika3():
                 
         our_snake(snake_block, snake)
         our_snake1(snake_block, snake2)
-        pygame.display.update()
+        
         if x == foodx and y == foody:
                
             foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
@@ -303,6 +303,7 @@ def gmeika3():
             elif foody<0:
                 foody=0
         foodA(x=foodx,y=foody,collor=green)
+        pygame.display.update()
         time.sleep(0.1)
     time.sleep(10)
     pygame.quit()
