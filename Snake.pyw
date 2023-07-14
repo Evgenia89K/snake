@@ -4,7 +4,7 @@ subprocess.run(["pip", "install", module, "--upgrade"])
 import pygame
 import time
 import random
-import datetime
+
 import os
 import functions_for_snake
 from functions_for_snake import message,message2
