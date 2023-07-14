@@ -2,7 +2,7 @@ def gmeika3():
     import pygame
     import time
     import random
-    import datetime
+    
     import functions_for_snake
     from functions_for_snake import our_snake,our_snake1,input1,foodA,message,message2
     pygame.init()
