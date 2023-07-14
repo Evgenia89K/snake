@@ -133,11 +133,11 @@ def gmeika3():
                 game_over=True
                 sch=0
                 fghd=0
-                message("You lose, viper!", collor1=white,collor2=red,a=vbf,b=400,c=400)
-                message2("Press Q to exit or C to replay!", collor1=white,a=vbf,b=300,c=500)
-                to_input="viper "+str(sch)
+                message("Вы проиграли, гадюка!", collor1=white,collor2=red,a=vbf,b=400,c=400)
+                message2("Нажмите Q для выхода или C для повторной игры!", collor1=white,a=vbf,b=200,c=500)
+                to_input="гадюка "+str(sch)
                 input1(msg=to_input,collor=yellow,a=score_font,b=0,c=0)
-                to_input="python "+str(sch2)
+                to_input="питон "+str(sch2)
                 input1(msg=to_input,collor=yellow,a=score_font,b=1000,c=0)
                 pygame.display.update()
                 while game_over:
@@ -155,11 +155,11 @@ def gmeika3():
                 game_over=True
                 sch=0
                 fghd=0
-                message("You lose, viper!", collor1=white,collor2=red,a=vbf,b=400,c=400)
-                message2("Press Q to exit or C to replay!", collor1=white,a=vbf,b=300,c=500)
-                to_input="viper "+str(sch)
+                message("Вы проиграли, гадюка!", collor1=white,collor2=red,a=vbf,b=400,c=400)
+                message2("Нажмите Q для выхода или C для повторной игры!", collor1=white,a=vbf,b=200,c=500)
+                to_input="гадюка "+str(sch)
                 input1(msg=to_input,collor=yellow,a=score_font,b=0,c=0)
-                to_input="python "+str(sch2)
+                to_input="питон "+str(sch2)
                 input1(msg=to_input,collor=yellow,a=score_font,b=1000,c=0)
                 pygame.display.update()
                 while game_over:
@@ -178,11 +178,11 @@ def gmeika3():
                 game_over=True
                 sch2=0
                 fghd=0
-                message("You lose, python!", collor1=white,collor2=red,a=vbf,b=400,c=400)
-                message2("Press Q to exit or C to replay!", collor1=white,a=vbf,b=300,c=500)
-                to_input="viper "+str(sch)
+                message("Вы проиграли, питон!", collor1=white,collor2=red,a=vbf,b=400,c=400)
+                message2("Нажмите Q для выхода или C для повторной игры!", collor1=white,a=vbf,b=200,c=500)
+                to_input="гадюка "+str(sch)
                 input1(msg=to_input,collor=yellow,a=score_font,b=0,c=0)
-                to_input="python "+str(sch2)
+                to_input="питон "+str(sch2)
                 input1(msg=to_input,collor=yellow,a=score_font,b=1000,c=0)
                 pygame.display.update()
                 while game_over:
@@ -200,11 +200,11 @@ def gmeika3():
                 game_over=True
                 sch2=0
                 fghd=0
-                message("You lose, python!", collor1=white,collor2=red,a=vbf,b=400,c=400)
-                message2("Press Q to exit or C to replay!", collor1=white,a=vbf,b=300,c=500)
-                to_input="viper "+str(sch)
+                message("Вы проиграли, питон!", collor1=white,collor2=red,a=vbf,b=400,c=400)
+                message2("Нажмите Q для выхода или C для повторной игры!", collor1=white,a=vbf,b=200,c=500)
+                to_input="гадюка "+str(sch)
                 input1(msg=to_input,collor=yellow,a=score_font,b=0,c=0)
-                to_input="python "+str(sch2)
+                to_input="питон "+str(sch2)
                 input1(msg=to_input,collor=yellow,a=score_font,b=1000,c=0)
                 pygame.display.update()
                 while game_over:
@@ -234,9 +234,9 @@ def gmeika3():
             foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
             foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
             sch2 += 1
-        to_input="viper "+str(sch)
+        to_input="гадюка "+str(sch)
         input1(msg=to_input,collor=yellow,a=score_font,b=0,c=0)
-        to_input="python "+str(sch2)
+        to_input="питон "+str(sch2)
         input1(msg=to_input,collor=yellow,a=score_font,b=1000,c=0)
         fghd+=1
         if fghd%5==0:
@@ -265,7 +265,6 @@ def gmeika3():
         foodA(x=foodx,y=foody,collor=green)
         pygame.display.update()
         time.sleep(0.1)
-        
     time.sleep(10)
     pygame.quit()
     quit()
