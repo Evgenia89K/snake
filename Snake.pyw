@@ -1,14 +1,11 @@
-import subprocess
-module = "pygame"
-subprocess.run(["pip", "install", module, "--upgrade"])
-module = "datetime"
-subprocess.run(["pip", "install", module, "--upgrade"])
+try:
+    file = open('C:\Program Files\Python36\Lib\site-packages\pygame\__pyinstaller\__pycache__\hook-pygame.cpython-36.pyc')
+except IOError as e:
+    import subprocess
+    module = "pygame"
+    subprocess.run(["pip", "install", module, "--upgrade"])
 import pygame
-import time
-import random
-
 import os
-import functions_for_snake
 from functions_for_snake import message,message2
 pygame.init()
 font_style = pygame.font.SysFont("bahnschrift", 25)
@@ -40,7 +37,6 @@ while True:
             pygame.quit()
             quit()
         if event.type == pygame.KEYDOWN:
-                    
             if event.key == pygame.K_e:
                 os.system('start Snake_E.pyw')
                 pygame.quit()
@@ -49,4 +45,3 @@ while True:
                 os.system('start Snake_R.pyw')
                 pygame.quit()
                 quit()
-                    

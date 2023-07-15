@@ -2,24 +2,15 @@ def gmeika3():
     import pygame
     import time
     import random
-    import functions_for_snake
     from functions_for_snake import our_snake,our_snake1,input1,foodA,message,message2
     pygame.init()
-    pygame.init()
-    font_style = pygame.font.SysFont("bahnschrift", 25)
     score_font = pygame.font.SysFont("comicsansms", 35)
     vbf = pygame.font.SysFont("comicsansms", 30)
     white = (255, 255, 255)
     yellow = (255, 255, 102)
-    black = (0, 0, 0)
     red = (213, 50, 80)
     green = (0, 255, 0)
     blue = (50, 153, 213)
-    violet=(225, 0, 180)
-    snake_collor11=(73,1,1)
-    snake_collor21=(30,11,6)
-    snake_collor12=(60,85,25)
-    snake_collor22=(15,40,25)
     dis_width = 1200
     dis_height = 1000
     dis = pygame.display.set_mode((dis_width, dis_height))
@@ -27,7 +18,6 @@ def gmeika3():
     dis.fill(blue)
     pygame.display.update()
     snake_block = 10
-    snake_speed = 10
     snake=[[600,500],[610,500]]
     snake2=[[500,500],[510,500]]
     x1_change=0
@@ -83,7 +73,6 @@ def gmeika3():
         y1+=y1_change1
         x1+=x1_change1
         dis.fill(blue)
-        pygame.draw.rect(dis, green, [foodx, foody, snake_block, snake_block])
         snake_Head = []
         snake_Head.append(x)
         snake_Head.append(y)
@@ -202,8 +191,6 @@ def gmeika3():
                                 sch2=0
                                 snake2=[[600,500],[610,500]]
                                 game_over=False                        
-                    
-                
         our_snake(snake_block, snake)
         our_snake1(snake_block, snake2)
         if x == foodx and y == foody:
@@ -245,17 +232,4 @@ def gmeika3():
         foodA(x=foodx,y=foody,collor=green)
         pygame.display.update()
         time.sleep(0.1)
-    time.sleep(10)
-    pygame.quit()
-    quit()
 gmeika3()
-
-
-
-
-
-
-
-
-
-
