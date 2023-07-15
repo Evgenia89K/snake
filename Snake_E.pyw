@@ -2,7 +2,6 @@ def gmeika3():
     import pygame
     import time
     import random
-    
     import functions_for_snake
     from functions_for_snake import our_snake,our_snake1,input1,foodA,message,message2
     pygame.init()
@@ -24,17 +23,13 @@ def gmeika3():
     dis_width = 1200
     dis_height = 1000
     dis = pygame.display.set_mode((dis_width, dis_height))
-    pygame.display.set_caption('Змейка ')
+    pygame.display.set_caption('Snake ')
     dis.fill(blue)
     pygame.display.update()
-    
     snake_block = 10
     snake_speed = 10
     snake=[[600,500],[610,500]]
     snake2=[[500,500],[510,500]]
-                 
-    
-    
     x1_change=0
     y1_change=0
     x1_change1=0
@@ -43,24 +38,18 @@ def gmeika3():
     foody=(int(random.randint(0,1001))//10)*10
     pygame.draw.rect(dis, green , [foodx, foody, snake_block, snake_block])
     pygame.display.update()
-
-
     sch=0
     sch2=0
     fghd=0
-    
     while True:
-        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 game_over = True
                 pygame.quit()
                 quit()
             if event.type == pygame.KEYDOWN:
-                
                 if event.key == pygame.K_LEFT:
-                            
-                    x1_change = -snake_block
+                     x1_change = -snake_block
                     y1_change = 0
                 elif event.key == pygame.K_RIGHT:
                     x1_change = snake_block
@@ -72,7 +61,6 @@ def gmeika3():
                     y1_change = snake_block
                     x1_change = 0
                 if event.key == pygame.K_a:
-                            
                     x1_change1 = -snake_block
                     y1_change1 = 0
                 elif event.key == pygame.K_d:
@@ -87,19 +75,15 @@ def gmeika3():
         a=len(snake)-1
         y=snake[a][1]
         x=snake[a][0]
-        
         y+=y1_change
         x+=x1_change
         a1=len(snake2)-1
         y1=snake2[a1][1]
         x1=snake2[a1][0]
-        
         y1+=y1_change1
         x1+=x1_change1
         dis.fill(blue)
         pygame.draw.rect(dis, green, [foodx, foody, snake_block, snake_block])
-        
-        
         snake_Head = []
         snake_Head.append(x)
         snake_Head.append(y)
@@ -222,15 +206,11 @@ def gmeika3():
                 
         our_snake(snake_block, snake)
         our_snake1(snake_block, snake2)
-        
         if x == foodx and y == foody:
-               
             foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
             foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
             sch += 1
-            
         if x1 == foodx and y1 == foody:
-               
             foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
             foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
             sch2 += 1
@@ -265,7 +245,6 @@ def gmeika3():
         foodA(x=foodx,y=foody,collor=green)
         pygame.display.update()
         time.sleep(0.1)
-        
     time.sleep(10)
     pygame.quit()
     quit()
