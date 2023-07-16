@@ -4,8 +4,53 @@ def gmeika3():
     import random
     from functions_for_snake import our_snake,our_snake1,input1,foodA,message,message2
     pygame.init()
+    def Q(python_sch,viper_sch):
+        to_input="python: "
+        sr_python=0
+        afgh=0
+        if len(python_sch)==0:
+            python_sch+=[0]
+        for i in python_sch:
+            afgh+=1
+            if afgh==len(python_sch):
+                to_input+=str(i)+" "
+            else:
+                to_input+=str(i)+", "
+            sr_python+=int(i)
+        sred_python=sr_python/afgh
+        dis.fill(blue)
+        input1(msg=to_input,collor=yellow,a=score_font,b=0,c=50)
+        to_input="viper: "
+        sr_viper=0
+        afgh=0
+        if len(viper_sch)==0:
+            viper_sch+=[0]
+        for i in viper_sch:
+            afgh+=1
+            if afgh==len(viper_sch):
+                to_input+=str(i)+" "
+            else:
+                to_input+=str(i)+", "
+            sr_viper+=int(i)
+        sred_viper=sr_viper/afgh
+        input1(msg=to_input,collor=yellow,a=score_font,b=0,c=100)
+        input1(msg="Python maximum: "+str(max(python_sch)),collor=yellow,a=score_font,b=0,c=150)
+        input1(msg="Viper maximum: "+str(max(viper_sch)),collor=yellow,a=score_font,b=0,c=200)
+        input1(msg="Average python ball: "+str(sred_python),collor=yellow,a=score_font,b=0,c=250)
+        input1(msg="Average viper ball: "+str(sred_viper),collor=yellow,a=score_font,b=0,c=300)
+        if sred_viper>sred_python:
+            input1(msg="Viper win!",collor=red,a=Q_srift,b=0,c=380)
+        elif sred_viper<sred_python:
+            input1(msg="Python win!",collor=red,a=Q_srift,b=0,c=380)
+        elif sred_viper==sred_python:
+            input1(msg="Draw!",collor=red,a=Q_srift,b=0,c=380)
+        pygame.display.update()
+        time.sleep(20)
     score_font = pygame.font.SysFont("comicsansms", 35)
     vbf = pygame.font.SysFont("comicsansms", 30)
+    Q_srift=pygame.font.SysFont("comicsansms", 50)
+    python_sch=[]
+    viper_sch=[]
     white = (255, 255, 255)
     yellow = (255, 255, 102)
     red = (213, 50, 80)
@@ -35,6 +80,7 @@ def gmeika3():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 game_over = True
+                Q(python_sch,viper_sch)
                 pygame.quit()
                 quit()
             if event.type == pygame.KEYDOWN:
@@ -104,6 +150,7 @@ def gmeika3():
         for i in snake[:-1]:
             if i ==  snake_Head1   and sch>0:
                 game_over=True
+                viper_sch+=[sch]
                 sch=0
                 fghd=0
                 message("You lose, viper!", collor1=white,collor2=red,a=vbf,b=400,c=400)
@@ -117,6 +164,7 @@ def gmeika3():
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_q:
+                                Q(python_sch,viper_sch)
                                 sch=0
                                 pygame.quit()
                                 quit()
@@ -126,6 +174,7 @@ def gmeika3():
                                 game_over=False
             elif i ==  snake_Head   and sch>0:
                 game_over=True
+                viper_sch+=[sch]
                 sch=0
                 fghd=0
                 message("You lose, viper!", collor1=white,collor2=red,a=vbf,b=400,c=400)
@@ -139,6 +188,7 @@ def gmeika3():
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_q:
+                                Q(python_sch,viper_sch)
                                 sch=0
                                 pygame.quit()
                                 quit()
@@ -149,6 +199,7 @@ def gmeika3():
         for i in snake2[:-1]:
             if i ==  snake_Head1   and sch2>0:
                 game_over=True
+                python_sch+=[sch2]
                 sch2=0
                 fghd=0
                 message("You lose, python!", collor1=white,collor2=red,a=vbf,b=400,c=400)
@@ -162,6 +213,7 @@ def gmeika3():
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_q:
+                                Q(python_sch,viper_sch)
                                 sch2=0
                                 pygame.quit()
                                 quit()
@@ -171,6 +223,7 @@ def gmeika3():
                                 game_over=False
             elif i ==  snake_Head   and sch2>0:
                 game_over=True
+                python_sch+=[sch2]
                 sch2=0
                 fghd=0
                 message("You lose, python!", collor1=white,collor2=red,a=vbf,b=400,c=400)
@@ -184,6 +237,7 @@ def gmeika3():
                     for event in pygame.event.get():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_q:
+                                Q(python_sch,viper_sch)
                                 sch2=0
                                 pygame.quit()
                                 quit()
